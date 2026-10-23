@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BeatPad — Synth Drum Machine</title>
+  <meta name="description" content="A browser drum machine with 8 synthesised pads and a 16-step sequencer. No samples, just Web Audio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="machine">
+    <header class="top">
+      <h1>BEAT<span>PAD</span><small>BP-808 · web audio</small></h1>
+      <div class="leds" aria-hidden="true"><i></i><i></i><i></i></div>
+    </header>
+
+    <section class="pads" aria-label="Drum pads — play with keys A to K"></section>
+
+    <section class="sequencer" aria-label="16-step sequencer">
+      <div class="transport">
+        <button type="button" id="playBtn" class="transport-btn" aria-pressed="false">▶ Play</button>
+        <label class="tempo">BPM <input type="range" id="tempo" min="60" max="180" value="96"><output id="tempoOut">96</output></label>
+        <label class="preset">Preset
+          <select id="preset">
+            <option value="">— choose —</option>
+            <option value="boombap">Boom Bap</option>
+            <option value="house">Four on the Floor</option>
+            <option value="bhangra">Bhangra-ish</option>
+          </select>
+        </label>
+        <button type="button" id="clearBtn" class="ghost">Clear</button>
+      </div>
+      <div class="grid" id="grid" role="grid"></div>
+    </section>
+
+    <p class="hint">Keys <kbd>A</kbd>–<kbd>K</kbd> play pads · <kbd>Space</kbd> starts or stops the sequencer · click cells to program a beat (it's saved automatically)</p>
+  </main>
+
+  <footer class="footer">Designed &amp; synthesised by <a href="https://github.com/himanshuuem">Himanshu</a></footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
